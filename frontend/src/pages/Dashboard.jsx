@@ -71,6 +71,17 @@ const Dashboard = () => {
     }
   };
 
+  useEffect(() => {
+    if (message || error) {
+      const timer = setTimeout(() => {
+        setMessage('');
+        setError('');
+      }, 1000);
+      return () => clearTimeout(timer); // Cleanup if component unmounts or value changes
+    }
+  }, [message, error]);
+
+
   return (
     <div className="container py-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -101,21 +112,28 @@ const Dashboard = () => {
           <option value="work">Work</option>
         </select>
       </div>
+      {contacts.length === 0 && (
+  <div className="alert alert-info">
+    No contacts found{filter ? ` for "${filter}" type` : ''}.
+  </div>
+)}
 
-      <ul className="list-group">
-        {contacts.map((c) => (
-          <li key={c._id} className="list-group-item d-flex justify-content-between align-items-center">
-            <div>
-              <strong>{c.name}</strong><br />
-              <small>{c.email}</small> | {c.phone} ({c.type})
-            </div>
-            <div>
-              <button className="btn btn-sm btn-warning me-2" onClick={() => handleEdit(c)}>Edit</button>
-              <button className="btn btn-sm btn-danger" onClick={() => handleDelete(c._id)}>Delete</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+<ul className="list-group">
+  {contacts.map((c) => (
+    <li key={c._id} className="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        <strong>{c.name}</strong><br />
+        <small>{c.email}</small> | {c.phone} ({c.type})
+      </div>
+      <div>
+        <button className="btn btn-sm btn-warning me-2" onClick={() => handleEdit(c)}>Edit</button>
+        <button className="btn btn-sm btn-danger" onClick={() => handleDelete(c._id)}>Delete</button>
+      </div>
+    </li>
+  ))}
+</ul>
+
+
     </div>
   );
 };
