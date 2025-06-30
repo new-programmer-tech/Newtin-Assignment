@@ -122,14 +122,14 @@ npm run dev
 Once seeded, you can log in with:
 
 ```bash
-Email: johndoe@example.com
+Email: john@example.com
 Password: password123
 ```
 
 or
 
 ```bash
-Email: janedoe@example.com
+Email: jane@example.com
 Password: password123
 ```
 
