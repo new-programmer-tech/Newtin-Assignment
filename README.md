@@ -97,8 +97,18 @@ npm run dev
 
 ### 5️⃣ Frontend Setup
 
+
+#### 📁 Create a `.env` file inside the `frontend/` directory with the following content:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+
+```
+
+---
+
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```
