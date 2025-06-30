@@ -77,7 +77,7 @@ const Dashboard = () => {
         setMessage('');
         setError('');
       }, 1000);
-      return () => clearTimeout(timer); // Cleanup if component unmounts or value changes
+      return () => clearTimeout(timer);
     }
   }, [message, error]);
 
