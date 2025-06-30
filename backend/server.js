@@ -5,13 +5,9 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-
 const authRoutes = require('./src/routes/auth');
 const contactRoutes = require('./src/routes/contacts');
-
-
 const { errorHandler } = require('./src/middleware/errorHandler');
-
 const app = express();
 
 // Middleware
@@ -34,7 +30,6 @@ app.use(errorHandler);
 app.use((req, res) => {
   res.status(404).json({ message: 'Route not found' });
 });
-
 
 // Database connection
 const connectDB = async () => {
