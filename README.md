@@ -97,8 +97,18 @@ npm run dev
 
 ### 5️⃣ Frontend Setup
 
+
+#### 📁 Create a `.env` file inside the `frontend/` directory with the following content:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+
+```
+
+---
+
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```
@@ -112,14 +122,14 @@ npm run dev
 Once seeded, you can log in with:
 
 ```bash
-Email: johndoe@example.com
+Email: john@example.com
 Password: password123
 ```
 
 or
 
 ```bash
-Email: janedoe@example.com
+Email: jane@example.com
 Password: password123
 ```
 
