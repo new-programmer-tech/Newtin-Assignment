@@ -114,7 +114,6 @@ const seedData = async () => {
     console.log(`Created ${janeContacts.length} contacts for Jane`);
     console.log('Seed data created successfully!');
 
-    // Display demo credentials
     console.log('\n=== DEMO CREDENTIALS ===');
     console.log('User 1:');
     console.log('  Email: john@example.com');
@@ -127,12 +126,12 @@ const seedData = async () => {
   } catch (error) {
     console.error('Seed error:', error);
   } finally {
-    // Close database connection
+    // Closing database connection
     await mongoose.connection.close();
     console.log('Database connection closed');
     process.exit(0);
   }
 };
 
-// Run the seed function
+
 seedData();
